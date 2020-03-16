@@ -43,7 +43,7 @@
 
                 <?php if(isset($_GET['login']) && $_GET['login'] == 'erro'){ ?>
                 
-                  <div class='text-danger'> Usuário ou senha incorreto(s)! </div>
+                  <div class='text-danger'> E-mail ou senha incorreto(s)! </div>
                 <?php }
                 if(isset($_GET['login']) && $_GET['login'] == 'erro2') { ?>
                     <div class='text-danger'> Usuário desconectado! </div>
