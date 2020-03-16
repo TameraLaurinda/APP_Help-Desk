@@ -1,7 +1,4 @@
-<?
-  session_start();
-  echo ($_SESSION['autenticado']);
-?>
+<? session_start(); ?>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -44,10 +41,13 @@
                   <input name="senha" type="password" class="form-control" placeholder="Senha">
                 </div>
 
-                <? if(isset($_GET['login']) && $_GET['login'] == 'erro'){?>
+                <?php if(isset($_GET['login']) && $_GET['login'] == 'erro'){ ?>
                 
-                  <div class='text-danger'> Login ou senha invalido(s)! </div>
-                <? } ?>
+                  <div class='text-danger'> Usuário ou senha incorreto(s)! </div>
+                <?php }
+                if(isset($_GET['login']) && $_GET['login'] == 'erro2') { ?>
+                    <div class='text-danger'> Usuário desconectado! </div>
+                <?php } ?>
                 <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
               </form>
             </div>
