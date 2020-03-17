@@ -5,27 +5,30 @@
 
     //
     $validar_user = false;
+    $usuario_id = null;
 
     $list_user = [
-        ['email' => 'tamera.tlgm@hotmail.com', 'senha' => '12345'],
-        ['email' => 'tameratlgm@gmail.com', 'senha' => '12345']
+        ['id' => 1,'email' => 'tamera.tlgm@hotmail.com', 'senha' => '12345'],
+        ['id' => 2, 'email' => 'tameratlgm@gmail.com', 'senha' => '12345']
     ];
 
 
-    function validarAcesso($list_user){
-        foreach($list_user as $user){   
+    
+    foreach($list_user as $user){   
 
-                if($user['email'] == $_POST['email'] && $user['senha'] == $_POST['senha'] ){
-                        return true;
-                } 
+        if($user['email'] == $_POST['email'] && $user['senha'] == $_POST['senha'] ){
+                    $validar_user = true;
+                    $usuario_id = $user['id'];
+        } 
             
-        }
-        return false;
     }
+        
+    
 
-    if(validarAcesso($list_user)){
+    if($validar_user){
         //echo'Usuário autenticado';
         $_SESSION['autenticado']= 'SIM';
+        $_SESSION['id'] = $usuario_id;
         header('Location: home.php');
     }else{
         header('Location: index.php?login=erro');

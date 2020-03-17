@@ -1,4 +1,6 @@
-<?php require_once "validador_acesso.php"; ?>
+<?php require_once "validador_acesso.php";
+  echo ($_SESSION['id']);
+ ?>
 
 <html>
   <head>
@@ -25,7 +27,7 @@
       </a>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="logoff.php">Sair</a>
+          <a class="nav-link" href="logoff.php">SAIR</a>
         </li>
       </ul>
     </nav>
