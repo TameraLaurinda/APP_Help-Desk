@@ -12,7 +12,7 @@
 	$descricao = str_replace('#', '-', $_POST['descricao']);
 
 
-	$chamado = $_SESSION['id'] . '#' . $titulo . '#' . $categoria . '#' .$descricao . PHP_EOL;
+	$chamado = $_SESSION['id'] . '#' . $titulo . '#' . $categoria . '#' .$descricao . $_SESSION['perfil'] . PHP_EOL;
 
 	$arquivo_chamados = fopen('arquivo.hd', 'a');
 

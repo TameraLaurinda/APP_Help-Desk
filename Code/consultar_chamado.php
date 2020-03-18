@@ -59,18 +59,27 @@
               <?php foreach ($registros_chamados as $registros ) { ?>
 
                 <?php
+
+                  
                   $dados = explode('#', $registros);
 
-                  if(count($dados) < 3){
-                    continue;
+                  print_r($dados[4]);
+
+                  if($dados[0] == $_SESSION['id'] )
+                  {
+                      if(count($dados) < 3){
+                        continue;
+                      }
                   }
+                 
+                  
                 ?>
 
               <div class="card mb-3 bg-light">
                 <div class="card-body">
-                  <h5 class="card-title"><?=$dados[0]?></h5>
-                  <h6 class="card-subtitle mb-2 text-muted"><?=$dados[1]?></h6>
-                  <p class="card-text"><?=$dados[2]?></p>
+                  <h5 class="card-title"><?=$dados[1]?></h5>
+                  <h6 class="card-subtitle mb-2 text-muted"><?=$dados[2]?></h6>
+                  <p class="card-text"><?=$dados[3]?></p>
 
                 </div>
               </div>

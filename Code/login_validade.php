@@ -8,8 +8,8 @@
     $usuario_id = null;
 
     $list_user = [
-        ['id' => 1,'email' => 'tamera.tlgm@hotmail.com', 'senha' => '12345'],
-        ['id' => 2, 'email' => 'tameratlgm@gmail.com', 'senha' => '12345']
+        ['id' => 1,'email' => 'tamera.tlgm@hotmail.com', 'senha' => '12345', 'perfil_id' => 1],
+        ['id' => 2, 'email' => 'tameratlgm@gmail.com', 'senha' => '12345', 'perfil_id' => 2]
     ];
 
 
@@ -19,8 +19,8 @@
         if($user['email'] == $_POST['email'] && $user['senha'] == $_POST['senha'] ){
                     $validar_user = true;
                     $usuario_id = $user['id'];
-        } 
-            
+                    $perfil_id = $user['perfil_id'];
+            }
     }
         
     
@@ -29,6 +29,7 @@
         //echo'Usuário autenticado';
         $_SESSION['autenticado']= 'SIM';
         $_SESSION['id'] = $usuario_id;
+        $_SESSION['perfil'] = $perfil_id;
         header('Location: home.php');
     }else{
         header('Location: index.php?login=erro');
